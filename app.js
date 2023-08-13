@@ -77,6 +77,7 @@ document.getElementById('current_date').innerText = current;
 // ------
 const btn = document.getElementById('btn')
 const CityName = document.getElementById('input')
+
 const today = document.getElementById('today')
 const week = document.getElementById('week')
 const weather_img = document.querySelector('.icons')
@@ -309,7 +310,7 @@ btn.addEventListener('click', (e) => {
 
 })
 
-
+getCoordinate("Mangalore")
 
 function showMessage(element, span, msg) {
 
