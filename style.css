@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: url("./IMG/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  position: relative;
+  width: 100vw;
+}
+
+main {
+  width: 100%;
+  min-height: 90vh;
+}
+
+.card {
+  height: 100%;
+}
+
+.location {
+  width: 25px;
+}
+
+.icons {
+  width: 150px;
+}
+
+.sun {
+  width: 35px;
+}
+
+.card,
+.navbar {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
+.we-icon {
+  width: 35px;
+}
+
+.days {
+  width: 80px;
+}
+
+/* .week {
+  overflow-x: auto;
+} */
+
+.week-icon {
+  width: 30px;
+}
+
+p::first-letter {
+  text-transform: capitalize;
+}
+
+section {
+  position: absolute;
+  top: 10%;
+  right: 1%;
+}
+
+.alert-info {
+  display: none;
+}
+
+.alert-success {
+  display: none;
+}
+
+.alert-danger {
+  display: none;
+}

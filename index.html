@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Weather Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet" />
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- Demo styles -->
+
+    <link rel="icon" type="image/x-icon" href="../img/iconlogo.ico">
+
+
+    <script defer src="app.js"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="d-flex justify-content-center align-items-center gap-2">
+                <img src="../img/logo.png" width="30" alt="">
+                <a class="navbar-brand"> Weather Search</a>
+            </div>
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" id="input" type="search" placeholder="Search" aria-label="Search" />
+                <button class="btn btn-primary" id="btn" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <main class="d-flex justify-content-center align-items-center gap-3 mt-4 mt-sm-0">
+
+        <div class="row w-100 mx-sm-5">
+
+            <div class="col-sm-3 mb-3 mb-sm-0">
+                <div class="card rounded-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between mb-2">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <img src="./img/location.png" alt="Location" class="location" />
+                                <h6 class="card-title" id="location"></h6>
+                            </div>
+
+                            <h6 class="card-title" id="current_date"></h6>
+                        </div>
+                        <div class="w-100 gap-2 d-flex justify-content-center align-items-center flex-column">
+                            <img src="#" class="icons " alt="" />
+                            <h1><span id="Temperature"></span>&#8451</h1>
+                            <p id="description"></p>
+                        </div>
+                        <hr />
+                        <div>
+                            <h6 class="text-center mb-3">Sunrise &#x26; Sunset</h6>
+                            <div class="card rounded-4 d-flex mb-2">
+                                <div class="w-100 h-100 d-flex justify-content-around py-2 align-items-center">
+                                    <img class="sun" src="../img/sunrise.png" alt="" />
+                                    <h6 class="">
+                                        <span style="font-size: 0.9rem">Sunrise <br /></span><span id="sunrise"></span>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="card rounded-4 d-flex">
+                                <div class="w-100 d-flex justify-content-around py-2 align-items-center h-100">
+                                    <img class="sun" src="../img/sunset.png" alt="" />
+                                    <h6 class="">
+                                        <span style="font-size: 0.9rem">Sunset <br /></span><span id="sunset"></span>
+                                    </h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <div class="card rounded-4">
+                    <div class="card-body">
+
+
+
+
+                        <h6 class="card-title">Today Overview</h6>
+                        <div class="row">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/hot.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Temperature</h6>
+                                            <h5 class="card-text" id="max_min_temp"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/humi.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Humidity</h6>
+                                            <h5 class="card-text" id="humi"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/wind.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Wind Speed</h6>
+                                            <h5 class="card-text" id="wind"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-0 mt-sm-4">
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/water.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Pressure</h6>
+                                            <h5 class="card-text" id="pressure"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/eye.png" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Visibility</h6>
+                                            <h5 class="card-text" id="visibility"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body d-flex justify-content-center align-items-center gap-5 h-100">
+                                        <div>
+                                            <img class="we-icon" src="../img/feel.svg" alt="" />
+                                        </div>
+                                        <div>
+                                            <h6 class="card-title">Feels Like</h6>
+                                            <h5 class="card-text" id="feels_like"></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mt-1 mt-sm-4" />
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Today</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Week</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                                <div class="swiper mySwiper row mt-0 mt-sm-3">
+                                    <div class="swiper-wrapper" id="today">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                                <div class="swiper mySwiper row mt-0 mt-sm-3">
+                                    <div class="swiper-wrapper" id="week">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section>
+        <div class="alert alert-success  " role="alert" id="alert">
+            <span id="msg"></span>
+        </div>
+        <div class="alert alert-info " role="alert" id="successBlock">
+            <span id="success"></span>
+        </div>
+        <div class="alert alert-danger" role="alert" id="errorBlock">
+            <span id="error"></span>
+        </div>
+
+    </section>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 10,
+                },
+                1024: {
+                    slidesPerView: 5,
+                    spaceBetween: 10,
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
