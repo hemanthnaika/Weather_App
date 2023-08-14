@@ -332,7 +332,7 @@ function weatherIcons(data) {
   let icon
   switch (true) {
     case weatherCode >= 801 && weatherCode <= 804:
-      icon = "./img/Clouds.png"
+      icon = "./assets/Clouds.png"
       break
     case weatherCode === 800:
       function isDayIcon(iconCode) {
@@ -341,25 +341,25 @@ function weatherIcons(data) {
       const weatherIcon = data.weather[0].icon
       const isDay = isDayIcon(weatherIcon);
       if (isDay) {
-        icon = "./img/sun.png"
+        icon = "./assets/sun.png"
       } else {
-        return ("./img/night.png")
+        return ("./assets/night.png")
       }
       break
     case weatherCode >= 500 && weatherCode <= 531:
-      icon = "./img/rain.png"
+      icon = "./assets/rain.png"
       break
     case weatherCode >= 600 && weatherCode <= 622:
-      icon = "./img/snow.png"
+      icon = "./assets/snow.png"
       break
     case weatherCode >= 701 && weatherCode <= 781:
-      icon = "./img/mist.png"
+      icon = "./assets/mist.png"
       break
     case weatherCode >= 200 && weatherCode <= 232:
-      icon = "./img/thunderstorm.png"
+      icon = "./assets/thunderstorm.png"
       break
     case weatherCode >= 300 && weatherCode <= 321:
-      icon = "./img/Drizzle.png"
+      icon = "./assets/Drizzle.png"
       break
 
   }
