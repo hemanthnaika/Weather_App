@@ -157,7 +157,7 @@ function convertTo12Hour(time24) {
 
 const getForecast = async (lat, lon) => {
   try {
-    const url = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=8cdb8cfbeda27e1e1162654b0cdfbf22`;
+    const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=8cdb8cfbeda27e1e1162654b0cdfbf22`;
     const response = await fetch(url);
     const data = await response.json();
     getSortForecastData(data)
@@ -282,7 +282,7 @@ function DateName(dt_txt) {
 
 const getCoordinate = async (city) => {
   try {
-    const url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8cdb8cfbeda27e1e1162654b0cdfbf22`;
+    const url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=8cdb8cfbeda27e1e1162654b0cdfbf22`;
     const response = await fetch(url);
     const data = await response.json();
     if (!data.length) {
